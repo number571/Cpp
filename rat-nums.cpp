@@ -22,8 +22,8 @@ class rat {
         rat() { numer = denom = 0; }
 
         friend string get(rat x);
-        friend int numer(rat x) { return x.numer; }
-        friend int denom(rat x) { return x.denom; }
+        int numers() { return numer; }
+        int denoms() { return denom; }
 
         friend rat operator+(rat x, rat y) {
             int num = x.numer * y.denom + y.numer * x.denom;
