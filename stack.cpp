@@ -34,10 +34,11 @@ class Stack {
 };
 
 int main(void) {
-    Stack x(3);
+    Stack *x = new Stack(3);
 
-    x.push('A'); x.push('B'); x.push('C');
-    cout << x.pop() << x.pop() << x.pop() << endl;
+    x->push('A'); x->push('B'); x->push('C');
+    cout << x->pop() << x->pop() << x->pop() << endl;
 
+    delete x;
     return 0;
 }
