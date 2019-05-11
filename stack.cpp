@@ -16,6 +16,9 @@ class Stack {
         Stack() {
             array = new char[MAX];
         }
+        ~Stack() {
+            delete array;
+        }
         void push(char x) {
             if (top < MAX) {
                 array[top++] = x;
