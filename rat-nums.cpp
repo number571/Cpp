@@ -28,6 +28,13 @@ class rat {
             return out;
         }
 
+        friend bool operator==(rat x, rat y) {
+            int gcd_value_x = gcd(x.numer, x.denom);
+            int gcd_value_y = gcd(y.numer, y.denom);
+            return  (x.numer / gcd_value_x) == (y.numer / gcd_value_y) &&
+                    (x.denom / gcd_value_x) == (y.denom / gcd_value_y);
+        }
+
         friend rat operator+(rat x, rat y) {
             int num = x.numer * y.denom + y.numer * x.denom;
             int den = x.denom * y.denom;
@@ -66,5 +73,9 @@ int main(void) {
     rat y{2, 4};
 
     cout << x << " + " << y << " = " << x + y << endl;
+
+    x = {2, 5};
+    y = {4, 10};
+    cout << (x == y) << endl;
     return 0;
 }
